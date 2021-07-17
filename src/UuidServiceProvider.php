@@ -2,9 +2,9 @@
 
 namespace Ryangjchandler\Uuid;
 
+use Ryangjchandler\Uuid\Commands\UuidCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ryangjchandler\Uuid\Commands\UuidCommand;
 
 class UuidServiceProvider extends PackageServiceProvider
 {
