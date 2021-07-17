@@ -2,12 +2,12 @@
 
 namespace RyanChandler\Uuid;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class UuidManager
 {
-    public function generateFor(string|array $model)
+    public function generateFor(string | array $model)
     {
         if (is_array($model)) {
             foreach ($model as $class) {

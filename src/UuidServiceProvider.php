@@ -2,7 +2,6 @@
 
 namespace RyanChandler\Uuid;
 
-use Ryangjchandler\Uuid\Commands\UuidCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
