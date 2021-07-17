@@ -1,2 +1,2 @@
 providers:
-  - Ryangjchandler\Uuid\UuidServiceProvider
+  - RyanChandler\Uuid\UuidServiceProvider

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ryangjchandler\Uuid\Tests;
+namespace RyanChandler\Uuid\Tests;
 
 class ExampleTest extends TestCase
 {

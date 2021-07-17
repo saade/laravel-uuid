@@ -36,13 +36,13 @@ composer require ryangjchandler/laravel-uuid
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Ryangjchandler\Uuid\UuidServiceProvider" --tag="laravel-uuid-migrations"
+php artisan vendor:publish --provider="RyanChandler\Uuid\UuidServiceProvider" --tag="laravel-uuid-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Ryangjchandler\Uuid\UuidServiceProvider" --tag="laravel-uuid-config"
+php artisan vendor:publish --provider="RyanChandler\Uuid\UuidServiceProvider" --tag="laravel-uuid-config"
 ```
 
 This is the contents of the published config file:
@@ -55,7 +55,7 @@ return [
 ## Usage
 
 ```php
-$laravel-uuid = new Ryangjchandler\Uuid();
+$laravel-uuid = new RyanChandler\Uuid();
 echo $laravel-uuid->echoPhrase('Hello, Spatie!');
 ```
 
