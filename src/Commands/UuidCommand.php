@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Ryangjchandler\Uuid\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class UuidCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-uuid';
 
     public $description = 'My command';
 
