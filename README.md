@@ -5,26 +5,6 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ryangjchandler/laravel-uuid/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ryangjchandler/laravel-uuid/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ryangjchandler/laravel-uuid.svg?style=flat-square)](https://packagist.org/packages/ryangjchandler/laravel-uuid)
 
----
-This repo can be used to scaffold a Laravel package. Follow these steps to get started:
-
-1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this laravel-uuid
-2. Run "./configure-laravel-uuid.sh" to run a script that will replace all placeholders throughout all the files
-3. Remove this block of text.
-4. Have fun creating your package.
-5. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-uuid.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-uuid)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
 ## Installation
 
 You can install the package via composer:
@@ -33,30 +13,53 @@ You can install the package via composer:
 composer require ryangjchandler/laravel-uuid
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="RyanChandler\Uuid\UuidServiceProvider" --tag="laravel-uuid-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="RyanChandler\Uuid\UuidServiceProvider" --tag="laravel-uuid-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
+There are 2 methods for applying automatic UUID generation to your models:
+
+### 1. Applying a trait
+
+Add the `RyanChandler\Uuid\Concerns\HasUuid` trait to your model:
+
 ```php
-$laravel-uuid = new RyanChandler\Uuid();
-echo $laravel-uuid->echoPhrase('Hello, Spatie!');
+class Post extends Model
+{
+    use \RyanChandler\Uuid\Concerns\HasUuid;
+}
+```
+
+This will automatically assign a time-ordered UUID to the `uuid` column on your model. UUIDs are generated using the `Str::orderedUuid()` method provided by Laravel.
+
+If you wish to change the column that is used, you can define a `uuidColumn` method on your model:
+
+```php
+class Post extends Model
+{
+    use \RyanChandler\Uuid\Concerns\HasUuid;
+
+    public function uuidColumn(): string
+    {
+        return 'guid';
+    }
+}
+```
+
+### 2. Mass-registration in `ServiceProvider`
+
+If you want to use the defaults and would like to avoid adding more traits to your model, you can mass-register your models in the `boot` method of a `ServiceProvider`.
+
+```php
+use RyanChandler\Uuid\Uuid;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        Uuid::generateFor([
+            \App\Models\Post::class,
+        ]);
+    }
+}
 ```
 
 ## Testing
