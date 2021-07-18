@@ -18,7 +18,11 @@ class UuidManager
         }
 
         $model::creating(function (Model $model) {
-            $model->uuid = $this->generateUuid();
+            $column = method_exists($model, 'uuidColumn')
+                ? $model->uuidColumn()
+                : 'uuid';
+
+            $model->{$column} = $this->generateUuid();
         });
     }
 
