@@ -16,6 +16,20 @@ trait HasUuid
         });
     }
 
+    public static function findByUuid(string $uuid)
+    {
+        $self = new static;
+
+        return static::where($self->uuidColumn(), $uuid)->first();
+    }
+
+    public static function findByUuidOrFail(string $uuid)
+    {
+        $self = new static;
+
+        return static::where($self->uuidColumn(), $uuid)->firstOrFail();
+    }
+
     public function uuidColumn(): string
     {
         return 'uuid';
