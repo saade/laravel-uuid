@@ -44,6 +44,10 @@ class Post extends Model
 }
 ```
 
+#### `findByUuid` & `findByUuidOrFail`
+
+You can use the `Model::findByUuid` and `Model::findByUuidOrFail` methods to quickly retrieve a model from it's UUID. These behave the same way as `Model::find` and `Model::findOrFail`.
+
 ### 2. Mass-registration in `ServiceProvider`
 
 If you want to use the defaults and would like to avoid adding more traits to your model, you can mass-register your models in the `boot` method of a `ServiceProvider`.
