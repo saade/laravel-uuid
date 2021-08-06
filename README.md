@@ -66,6 +66,12 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
+### Using the UUID in route definitions
+
+If you want to use your `uuid` column as the default route-model binding column, you can implement the `RyanChandler\Uuid\Contracts\WithUuidRouteKey` contract on your model.
+
+This will force the `HasUuid` trait to use the `uuid` column as the return value of `getRouteKeyName` which Laravel uses to determine how to receive a model for implicit route-model binding.
+
 ## Testing
 
 ```bash
