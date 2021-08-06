@@ -3,6 +3,7 @@
 namespace RyanChandler\Uuid\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
+use RyanChandler\Uuid\Contracts\WithUuidRouteKey;
 use RyanChandler\Uuid\Uuid;
 
 trait HasUuid
@@ -28,6 +29,15 @@ trait HasUuid
         $self = new static();
 
         return static::where($self->uuidColumn(), $uuid)->firstOrFail();
+    }
+
+    public function getRouteKeyName()
+    {
+        if ($this instanceof WithUuidRouteKey) {
+            return $this->uuidColumn();
+        }
+
+        return parent::getRouteKeyName();
     }
 
     public function uuidColumn(): string
