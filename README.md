@@ -5,12 +5,19 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ryangjchandler/laravel-uuid/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ryangjchandler/laravel-uuid/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ryangjchandler/laravel-uuid.svg?style=flat-square)](https://packagist.org/packages/ryangjchandler/laravel-uuid)
 
+> [!CAUTION]
+> This package is a fork of [ryangjchandler/laravel-uuid](https://packagist.org/packages/ryangjchandler/laravel-uuid) (which is no longer maintained) to keep old projects still alive.
+>
+> Laravel now has [first-party support for generating UUIDs and ULIDs](https://laravel.com/docs/eloquent#uuid-and-ulid-keys) on Eloquent models, you should use that instead.
+>
+> This package will not receive any new features or updates, only compatibility fixes.
+
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require ryangjchandler/laravel-uuid
+composer require saade/laravel-uuid
 ```
 
 ## Usage
@@ -19,12 +26,12 @@ There are 2 methods for applying automatic UUID generation to your models:
 
 ### 1. Applying a trait
 
-Add the `RyanChandler\Uuid\Concerns\HasUuid` trait to your model:
+Add the `Saade\Uuid\Concerns\HasUuid` trait to your model:
 
 ```php
 class Post extends Model
 {
-    use \RyanChandler\Uuid\Concerns\HasUuid;
+    use \Saade\Uuid\Concerns\HasUuid;
 }
 ```
 
@@ -35,7 +42,7 @@ If you wish to change the column that is used, you can define a `uuidColumn` met
 ```php
 class Post extends Model
 {
-    use \RyanChandler\Uuid\Concerns\HasUuid;
+    use \Saade\Uuid\Concerns\HasUuid;
 
     public function uuidColumn(): string
     {
@@ -53,7 +60,7 @@ You can use the `Model::findByUuid` and `Model::findByUuidOrFail` methods to qui
 If you want to use the defaults and would like to avoid adding more traits to your model, you can mass-register your models in the `boot` method of a `ServiceProvider`.
 
 ```php
-use RyanChandler\Uuid\Uuid;
+use Saade\Uuid\Uuid;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -68,7 +75,7 @@ class AppServiceProvider extends ServiceProvider
 
 ### Using the UUID in route definitions
 
-If you want to use your `uuid` column as the default route-model binding column, you can implement the `RyanChandler\Uuid\Contracts\WithUuidRouteKey` contract on your model.
+If you want to use your `uuid` column as the default route-model binding column, you can implement the `Saade\Uuid\Contracts\WithUuidRouteKey` contract on your model.
 
 This will force the `HasUuid` trait to use the `uuid` column as the return value of `getRouteKeyName` which Laravel uses to determine how to receive a model for implicit route-model binding.
 
@@ -92,7 +99,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Ryan Chandler](https://github.com/ryangjchandler)
+- [Ryan Chandler](https://github.com/ryangjchandler) - Original author
 - [All Contributors](../../contributors)
 
 ## License
