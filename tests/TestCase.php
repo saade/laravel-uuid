@@ -1,6 +1,6 @@
 <?php
 
-namespace RyanChandler\Uuid\Tests;
+namespace Saade\Uuid\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Testing\RefreshDatabase;

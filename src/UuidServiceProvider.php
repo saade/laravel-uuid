@@ -1,6 +1,6 @@
 <?php
 
-namespace RyanChandler\Uuid;
+namespace Saade\Uuid;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

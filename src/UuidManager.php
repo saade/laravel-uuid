@@ -1,6 +1,6 @@
 <?php
 
-namespace RyanChandler\Uuid;
+namespace Saade\Uuid;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;

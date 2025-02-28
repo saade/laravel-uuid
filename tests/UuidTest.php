@@ -1,9 +1,9 @@
 <?php
 
-namespace RyanChandler\Uuid\Tests;
+namespace Saade\Uuid\Tests;
 
 use Illuminate\Database\Eloquent\Model;
-use RyanChandler\Uuid\Concerns\HasUuid;
+use Saade\Uuid\Concerns\HasUuid;
 
 class Post extends Model
 {

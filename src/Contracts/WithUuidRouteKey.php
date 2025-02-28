@@ -1,6 +1,6 @@
 <?php
 
-namespace RyanChandler\Uuid\Contracts;
+namespace Saade\Uuid\Contracts;
 
 interface WithUuidRouteKey
 {

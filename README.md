@@ -1,12 +1,12 @@
 # A small package for adding UUIDs to Eloquent models.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ryangjchandler/laravel-uuid.svg?style=flat-square)](https://packagist.org/packages/ryangjchandler/laravel-uuid)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ryangjchandler/laravel-uuid/run-tests?label=tests)](https://github.com/ryangjchandler/laravel-uuid/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ryangjchandler/laravel-uuid/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ryangjchandler/laravel-uuid/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/ryangjchandler/laravel-uuid.svg?style=flat-square)](https://packagist.org/packages/ryangjchandler/laravel-uuid)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/saade/laravel-uuid.svg?style=flat-square)](https://packagist.org/packages/saade/laravel-uuid)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/saade/laravel-uuid/run-tests?label=tests)](https://github.com/saade/laravel-uuid/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/saade/laravel-uuid/Check%20&%20fix%20styling?label=code%20style)](https://github.com/saade/laravel-uuid/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/saade/laravel-uuid.svg?style=flat-square)](https://packagist.org/packages/saade/laravel-uuid)
 
 > [!CAUTION]
-> This package is a fork of [ryangjchandler/laravel-uuid](https://packagist.org/packages/ryangjchandler/laravel-uuid) (which is no longer maintained) to keep old projects still alive.
+> This package is a fork of [saade/laravel-uuid](https://packagist.org/packages/saade/laravel-uuid) (which is no longer maintained) to keep old projects still alive.
 >
 > Laravel now has [first-party support for generating UUIDs and ULIDs](https://laravel.com/docs/eloquent#uuid-and-ulid-keys) on Eloquent models, you should use that instead.
 >

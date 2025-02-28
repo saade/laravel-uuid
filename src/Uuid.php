@@ -1,6 +1,6 @@
 <?php
 
-namespace RyanChandler\Uuid;
+namespace Saade\Uuid;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static string generateUuid()
  * @method static void generateFor(string|array $model)
  *
- * @see \RyanChandler\Uuid\UuidManager
+ * @see \Saade\Uuid\UuidManager
  */
 class Uuid extends Facade
 {

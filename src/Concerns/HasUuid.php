@@ -1,10 +1,10 @@
 <?php
 
-namespace RyanChandler\Uuid\Concerns;
+namespace Saade\Uuid\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
-use RyanChandler\Uuid\Contracts\WithUuidRouteKey;
-use RyanChandler\Uuid\Uuid;
+use Saade\Uuid\Contracts\WithUuidRouteKey;
+use Saade\Uuid\Uuid;
 
 trait HasUuid
 {
